@@ -22,3 +22,19 @@ jobs:
         node-version: 16
     - run: npm i -g ts-binary-wrapper
     - run: snyk -d
+  me-again:
+    name: Hello again
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-18.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - run: npx ts-binary-wrapper
