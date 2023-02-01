@@ -20,7 +20,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: npm i -g ts-binary-wrapper
+    - run: npm i -g ts-binary-wrapper2
     - run: snyk -d
   me-again:
     name: Hello again
@@ -37,4 +37,4 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: npx ts-binary-wrapper
+    - run: npx ts-binary-wrapper2
