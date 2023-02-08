@@ -21,7 +21,7 @@ jobs:
       with:
         node-version: 16
     - run: npm i -g snyk
-    - run: snyk -d
+    - run: snyk -d version
   me-again:
     name: Hello again
     strategy:
@@ -37,4 +37,5 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: npx snyk
+    - run: npx snyk -d version
+
